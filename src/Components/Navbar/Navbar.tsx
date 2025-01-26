@@ -12,16 +12,23 @@ import img5 from '../../image/5.png';
 import img6 from '../../image/6.png';
 import banner from '../../image/modalNavabr.png';
 
+// Define the type for a language
+type Language = {
+    code: string;
+    name: string;
+    flag: string;
+};
+
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState({
+    const [selectedLanguage, setSelectedLanguage] = useState<Language>({
         code: 'en',
         name: 'English',
         flag: flag1,
     });
 
-    const languages = [
+    const languages: Language[] = [
         {
             code: 'en',
             name: 'English',
@@ -41,7 +48,8 @@ const Navbar = () => {
 
     const toggleModal = () => setIsModalOpen((prev) => !prev);
     const toggleLanguageDropdown = () => setIsLanguageDropdownOpen((prev) => !prev);
-    const selectLanguage = (language) => {
+
+    const selectLanguage = (language: Language) => {
         setSelectedLanguage(language);
         setIsLanguageDropdownOpen(false);
     };

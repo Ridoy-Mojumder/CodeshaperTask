@@ -91,20 +91,17 @@ const Home = () => {
 
     return (
         <div className="bg-gray-100 p-4 sm:p-6 md:p-8">
-            {/* Statistics Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {stats.map((stat, index) => (
                     <div
                         key={index}
                         className="w-full h-[140px] sm:h-[160px] md:h-[100px] p-4 flex justify-between items-center bg-white shadow-md rounded-[12px] border-[1px] border-gray-200"
                     >
-                        {/* Left Side: Title and Value */}
                         <div>
                             <div className="text-bold text-black">{stat.title}</div>
                             <div className="text-xl sm:text-2xl font-bold text-gray-800">{stat.value}</div>
                         </div>
 
-                        {/* Right Side: Icon and Change */}
                         <div>
                             <img
                                 src={stat.icon}
@@ -128,7 +125,6 @@ const Home = () => {
                 ))}
             </div>
 
-            {/* Campaign Performance Table */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden mt-6">
                 <h2 className="text-xl sm:text-2xl font-bold p-4">Campaign Performance by Source</h2>
                 <table className="min-w-full border-collapse">

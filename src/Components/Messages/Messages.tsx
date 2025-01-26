@@ -72,7 +72,7 @@ const Messages = () => {
             <div
               key={message.id}
               className="p-4 border-b last:border-b-0 flex items-start space-x-4 cursor-pointer"
-              onClick={() => setIsModalOpen(true)} // Open modal on message click
+              onClick={() => setIsModalOpen(true)}
             >
               <div className="flex-shrink-0 h-10 w-10 bg-blue-500 text-white flex items-center justify-center rounded-full">
                 <span className="text-lg font-bold">{message.sender[0]}</span>
@@ -89,7 +89,6 @@ const Messages = () => {
         )}
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
           <div
@@ -101,14 +100,14 @@ const Messages = () => {
               right: "337px",
             }}
           >
-            {/* Modal Header */}
+            
             <div className="relative">
               <img
-                src={banner} // Replace with your banner image path
+                src={banner} 
                 alt="Modal Banner"
                 className="w-full rounded-t-[6px]"
               />
-              {/* Close Button */}
+              
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
@@ -117,7 +116,7 @@ const Messages = () => {
               </button>
             </div>
 
-            {/* Modal Body */}
+
             <ul className="p-4 space-y-3 overflow-y-auto flex-1">
               {[1, 2, 3, 4, 5, 6].map((index) => (
                 <li
@@ -125,7 +124,7 @@ const Messages = () => {
                   className="flex items-center space-x-3 p-3 bg-gray-50 rounded-md shadow-sm hover:bg-gray-100"
                 >
                   <img
-                    src={`https://randomuser.me/api/portraits/men/${index}.jpg`} // Random placeholder images
+                    src={`https://randomuser.me/api/portraits/men/${index}.jpg`} 
                     alt={`Notification ${index}`}
                     className="w-[40px] h-[40px] rounded-full"
                   />
@@ -140,7 +139,6 @@ const Messages = () => {
               ))}
             </ul>
 
-            {/* Modal Footer */}
             <div className="px-4 py-3 bg-gray-100">
               <button className="text-sm h-8 bg-indigo-600 w-full text-white font-medium rounded">
                 View All

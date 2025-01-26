@@ -12,7 +12,6 @@ import img5 from '../../image/5.png';
 import img6 from '../../image/6.png';
 import banner from '../../image/modalNavabr.png';
 
-// Define the type for a language
 type Language = {
     code: string;
     name: string;
@@ -65,7 +64,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    {/* Notification Icon */}
                     <div
                         onClick={toggleModal}
                         className="relative w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center cursor-pointer p-1"
@@ -76,7 +74,6 @@ const Navbar = () => {
                         </span>
                     </div>
 
-                    {/* Language Dropdown */}
                     <div className="relative">
                         <div
                             onClick={toggleLanguageDropdown}
@@ -106,7 +103,6 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {/* User Info */}
                     <div className="flex items-center gap-3 w-56 h-10 cursor-pointer hover:text-indigo-600 border border-gray-300 rounded-full px-3 py-2">
                         <img src={userIcon} alt="User Icon" className="w-6 h-6 rounded-full" />
                         <span className="text-sm text-gray-700 font-medium truncate">Codeshaper Admin</span>
@@ -115,7 +111,6 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Notification Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
                     <div
@@ -127,14 +122,12 @@ const Navbar = () => {
                             right: '25%',
                         }}
                     >
-                        {/* Modal Header */}
                         <div className="relative">
                             <img
                                 src={banner}
                                 alt="Modal Banner"
                                 className="w-full rounded-t-[6px]"
                             />
-                            {/* Close Button */}
                             <button
                                 onClick={() => setIsModalOpen(false)}
                                 className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
@@ -143,7 +136,6 @@ const Navbar = () => {
                             </button>
                         </div>
 
-                        {/* Modal Body */}
                         <ul className="p-4 space-y-3 overflow-y-auto flex-1">
                             {[img1, img2, img3, img4, img5, img6].map((img, index) => (
                                 <li
@@ -164,7 +156,6 @@ const Navbar = () => {
                             ))}
                         </ul>
 
-                        {/* Modal Footer */}
                         <div className="px-4 py-3 bg-gray-100">
                             <button className="text-sm h-8 bg-indigo-600 w-full text-white font-medium rounded">
                                 View All
